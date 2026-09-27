@@ -1,0 +1,54 @@
+# --- Claude Code: configurações pessoais (agentes, hooks e settings.json SÃO versionados) ---
+.claude/settings.local.json
+CLAUDE.local.md
+
+# --- Flutter / Dart ---
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+coverage/
+*.g.dart.bak
+
+# --- Android ---
+android/.gradle/
+android/captures/
+android/local.properties
+android/app/debug/
+android/app/profile/
+android/app/release/
+android/key.properties
+*.jks
+*.keystore
+*.apk
+*.aab
+
+# --- C++ / CMake / NDK ---
+.cxx/
+.externalNativeBuild/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+*.o
+*.obj
+*.so
+*.a
+
+# --- IDEs ---
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Segredos ---
+.env
+.env.*
+*.pem

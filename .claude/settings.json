@@ -1,0 +1,12 @@
+{
+  "enabledPlugins": {
+    "impeccable@impeccable": true
+  },
+  "permissions": {
+    "ask": [
+      "Bash(git push origin main*)",
+      "Bash(git push origin master*)",
+      "Bash(git push -u origin main*)"
+    ]
+  }
+}

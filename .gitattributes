@@ -1,0 +1,8 @@
+# Normaliza finais de linha no repositório; scripts shell sempre com LF
+# (senão os hooks quebram em Linux/macOS de outros colaboradores).
+* text=auto
+*.sh text eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.jar binary
