@@ -1,0 +1,1 @@
+- [Workspace e identidade](project_workspace.md) — cópia oficial em /c/dev/Minha_Carteira, remoto SSH, identidade local a configurar em clones

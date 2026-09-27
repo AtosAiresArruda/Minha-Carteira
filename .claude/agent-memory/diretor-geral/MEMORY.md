@@ -1,0 +1,1 @@
+- [Fluxo git automático](feedback_automacao.md) — usuário só participa do merge na main; hooks do --agent vazam p/ subagentes
