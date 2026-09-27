@@ -26,4 +26,20 @@ if echo "$CMD" | grep -Eq '(^|[[:space:]])merge([[:space:]]|$)'; then
   [ "$BRANCH_ATUAL" = "main" ] && perguntar "Merge na branch main: exige aprovação do usuário."
 fi
 
+if echo "$CMD" | grep -Eq '(^|[[:space:]])branch([[:space:]]|$)' && echo "$CMD" | grep -Eq '[[:space:]](-f|--force|-m|-M|-c|-C|-d|-D|--delete|--move)([[:space:]]|$)' && echo "$CMD" | grep -Eq "$TOKEN_MAIN"; then
+  perguntar "Alterar a branch main: exige aprovação do usuário."
+fi
+
+if echo "$CMD" | grep -Eq '(^|[[:space:]])update-ref([[:space:]]|$)' && echo "$CMD" | grep -Eq 'refs/heads/main'; then
+  perguntar "Alterar a branch main: exige aprovação do usuário."
+fi
+
+if echo "$CMD" | grep -Eq '(^|[[:space:]])checkout[[:space:]]+-B[[:space:]]+main([[:space:]]|$)'; then
+  perguntar "Alterar a branch main: exige aprovação do usuário."
+fi
+
+if echo "$CMD" | grep -Eq '(^|[[:space:]])switch[[:space:]]+(-C|--force-create)[[:space:]]+main([[:space:]]|$)'; then
+  perguntar "Alterar a branch main: exige aprovação do usuário."
+fi
+
 exit 0

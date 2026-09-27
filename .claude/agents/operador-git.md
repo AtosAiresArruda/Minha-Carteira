@@ -27,6 +27,7 @@ Você executa o plano de comandos git aprovado pelo revisor-git no repositório 
 - Merge ou push na `main`: só execute se o plano do revisor-git registrar "Aprovação: usuário".
   O sistema ainda vai pedir confirmação ao usuário; se ele negar, PARE e reporte "negado pelo usuário".
 - Merge em `dev-main`: só execute se o plano registrar "Aprovação: diretor-geral".
+- Todo comando do plano começa com cd "<raiz do repositório>" &&. Se algum comando do plano não tiver isso, não execute nada: responda "plano sem raiz do repositório" ao diretor-geral.
 
 # Resposta (formato obrigatório)
 ## Execução

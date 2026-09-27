@@ -1,1 +1,2 @@
 - [Workspace e identidade](project_workspace.md) — cópia oficial em /c/dev/Minha_Carteira, remoto SSH, identidade local a configurar em clones
+- [Convenções de plano](feedback_planos.md) — cd na raiz, evitar "main" solto em mensagens, commits intermediários consistentes, working copy misturada
