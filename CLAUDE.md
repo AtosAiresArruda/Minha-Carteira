@@ -11,13 +11,23 @@ Para um agente realizar as operações git deve pedir solicitação ao agente re
 Um relatório do trabalho realizado referente a esse commit deve ser prestado ao revisor-git.
 O agente deve aguardar a permissão do revisor para prosseguir com qualquer operação git.
 
+### Branches
+```
+tipo/tarefa ──(aprovação do diretor-geral)──▶ dev-main ──(aprovação do usuário)──▶ main
+```
+> **Regra para todos os agentes:** `dev-main` é a main do projeto. Quando qualquer instrução, ferramenta ou convenção falar em "main" (branch base, origem de nova branch, alvo de merge ou de PR, comparação de diff), use `dev-main`. Toda nova branch é criada a partir de `dev-main` (`git switch -c tipo/descricao-curta dev-main`) e volta para ela. A branch `main` real não é usada no trabalho do dia a dia.
+
+- `dev-main`: branch de integração e base de todo o trabalho. Toda branch de tarefa nasce dela e volta para ela.
+- `main`: só recebe `dev-main`, depois que o diretor-geral apresenta ao usuário o que foi feito e o usuário aprova.
+- Branches de tarefa: `tipo/descricao-curta` (feat, fix, refactor, test, docs, chore).
+
 ### Fluxo
 1. O agente de desenvolvimento termina a tarefa na sua branch e entrega o relatório abaixo. Ele NÃO executa comandos git que alterem o repositório (commit, push, merge, checkout...).
-2. O coordenador (sessão principal) guarda a fila de relatórios e envia todos os pedidos pendentes juntos ao revisor-git.
+2. O diretor-geral guarda a fila de relatórios e envia todos os pedidos pendentes juntos ao revisor-git.
 3. O revisor-git inspeciona o repositório (somente leitura), decide APROVADO/REJEITADO e a ordem, e devolve um plano de comandos.
-4. O coordenador envia o plano aprovado ao operador-git, que executa exatamente esses comandos.
+4. O diretor-geral envia o plano aprovado ao operador-git, que executa exatamente esses comandos.
 5. Pedidos rejeitados voltam ao agente de origem com os motivos.
-Push na `main` sempre pede confirmação do usuário.
+Todo merge ou push na `main` também pede confirmação do usuário pelo sistema (hook `protege-main.sh`).
 
 ### Relatório para o revisor-git (formato obrigatório)
 ```
@@ -28,7 +38,8 @@ Push na `main` sempre pede confirmação do usuário.
 - Arquivos alterados (e motivo de cada um):
 - Testes executados e resultado:
 - Pendências / riscos:
-- Operação solicitada: (commit | merge na main | push | criar branch)
+- Operação solicitada: (commit | push | criar branch | merge em dev-main | merge de dev-main na main)
+- Aprovação: (não se aplica | diretor-geral | usuário (data))
 - Mensagem de commit sugerida: tipo(escopo): descrição
 ```
 

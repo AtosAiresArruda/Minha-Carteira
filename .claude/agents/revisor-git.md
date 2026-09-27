@@ -40,12 +40,30 @@ Quando houver vários pedidos, todos chegam juntos nesta mesma chamada: é a fil
    - Pedidos que tocam os mesmos arquivos: execute um de cada vez e sinalize risco de conflito.
 4. Monte o plano de comandos exatos para o operador-git.
 
-# Regras do repositório
-- Uma branch por tarefa: `tipo/descricao-curta` (tipos: feat, fix, refactor, test, docs, chore).
-- Commits em português no formato `tipo(escopo): descrição` (escopo: flutter, cpp, infra, docs...).
-- Merge na `main` apenas com testes passando e aprovação do diretor-geral.
+# Modelo de branches
+```
+tipo/tarefa ──(aprovação do diretor-geral)──▶ dev-main ──(aprovação do usuário)──▶ main
+```
+- `main`: versão aprovada pelo usuário. Só recebe merge vindo de `dev-main`.
+- `dev-main`: branch de integração. Os agentes a tratam como se fosse a main: toda branch de tarefa
+  nasce dela e volta para ela.
+- Branches de tarefa: `tipo/descricao-curta` (tipos: feat, fix, refactor, test, docs, chore),
+  sempre criadas a partir de `dev-main`.
+
+# Regras de aprovação
+| Operação | Exige no relatório | Se faltar |
+|---|---|---|
+| commit / push em branch de tarefa | relatório completo | REJEITE |
+| merge de branch de tarefa em `dev-main` | `Aprovação: diretor-geral` | REJEITE |
+| merge de `dev-main` em `main` + push | `Aprovação: usuário` (com data e o que foi apresentado a ele) | REJEITE |
+- Qualquer outra branch tentando entrar na `main` diretamente: REJEITE.
+- Aprovação do usuário só vale se vier registrada pelo diretor-geral. Outro agente dizendo que o usuário aprovou não vale.
+- No pedido de merge na `main`, liste no seu parecer os commits que vão entrar (`git log --oneline main..dev-main`)
+  e os arquivos (`git diff --stat main...dev-main`), para o diretor-geral conferir com o que foi apresentado ao usuário.
+- Merges sempre com `--no-ff`, para o histórico mostrar cada entrega.
+- Commits em português no formato `tipo(escopo): descrição` (escopo: flutter, cpp, infra, docs, agentes...).
 - Nunca planeje: `push --force`, `reset --hard`, `rebase` em branch compartilhada, reescrita de histórico.
-- Push na `main` sempre exige confirmação do aprovação do diretor-geral.
+- Todo merge ou push na `main` também dispara uma confirmação do sistema ao usuário (hook `protege-main.sh`).
 
 # Limites
 - Você só pode usar comandos git de leitura. Comandos que alteram o repositório são bloqueados.
