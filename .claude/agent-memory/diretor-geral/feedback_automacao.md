@@ -11,4 +11,6 @@ O fluxo tarefa → revisor-git → operador-git → dev-main deve rodar sem o us
 
 **How to apply:** não proponha que o usuário execute comandos git ou abra outras sessões como solução de rotina. Se algo travar o fluxo, corrija a configuração (com o aval dele para mudanças de hooks e permissões). Fora do merge na main, só peça a ele o que o sistema exige.
 
-Nota técnica: com `claude --agent diretor-geral`, os hooks do frontmatter do diretor valem para os subagentes. O JSON do hook traz `agent_type`/`agent_id` para identificar quem chama. O diretor não consegue editar os próprios hooks: o classificador bloqueia a auto-modificação, e o usuário precisa aplicar a mudança.
+Nota técnica: com `claude --agent diretor-geral`, os hooks do frontmatter do diretor valem para os subagentes. O JSON do hook traz `agent_type`/`agent_id` para identificar quem chama. O diretor não consegue editar os próprios hooks: o classificador bloqueia a auto-modificação, e o usuário precisa aplicar a mudança. A liberação por `agent_type` "operador-git" funcionou na A-04 (2026-09-27): o ciclo revisor → operador rodou sem intervenção.
+
+Processo que funcionou: enviar ao revisor o relatório completo com a lista explícita de arquivos e pedir `cd /c/dev/Minha_Carteira &&` em cada comando; repassar o plano literal ao operador; conferir com `git log --graph --all` + `git ls-remote`.
