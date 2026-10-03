@@ -45,7 +45,7 @@ Todo merge ou push na `main` também pede confirmação do usuário pelo sistema
 
 
 ## Objetivo Atual
-Construir o MVP do aplicativo. O MVP é definido pelas seguintes funcionalidades:
+Prototipar o MVP do aplicativo (protótipo clicável no Figma, estrutura limpa, com dados de exemplo) para apresentação a Z, e produzir a documentação completa em docs/especificacao/ que orientará os agentes de programação. O MVP é definido pelas seguintes funcionalidades:
 - Usuário pode acessar os gráficos referentes aos seus gastos
 
 ## Cenário
