@@ -1,3 +1,4 @@
 - [Estado da entrevista E-01](projeto_estado-entrevista.md) — onde parou, pendências de branch/Figma/git, o que fazer ao retomar
-- [Respostas do Tema 1](tema1-respostas.md) — D1–D9, PA-01/02, proposta para CLAUDE.md; aguardando confirmação
+- [Respostas do Tema 1](tema1-respostas.md) — D1–D9, PA-01/02, proposta CLAUDE.md; confirmado e gravado em 2026-10-03
+- [Respostas do Tema 2](tema2-respostas.md) — envio da foto/estados; fechado e gravado; nada se apaga (D22)
 - [Como entrevistar o Atos](feedback_entrevista.md) — respostas abertas ricas; não gravar fora da branch certa
