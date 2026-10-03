@@ -7,12 +7,13 @@ A lista completa de tarefas fica em `docs/backlog.md`; aqui só entra o que impo
 
 ## Concluído recentemente
 - A-01, A-05, A-06 e S-01 integrados na `dev-main` (merge 658f317) e publicados. A `main` continua no commit inicial (80dd33b).
+- A-08 / A-09: engenheiro-software e revisor-arquitetura criados (9df1f62).
 - A equipe de gestão está completa: diretor-geral, revisor-git, operador-git, secretario-geral e engenheiro-software.
 
 ## Em andamento
 <!-- formato: - <ID> — <agente> — <situação> -->
-- A-08 / A-09 — secretario-geral — agentes engenheiro-software e revisor-arquitetura escritos; aguardando commit via revisor-git.
-- E-01 — engenheiro-software — branch `docs/especificacao-mvp` criada e publicada; a entrevista ainda não começou.
+- E-01 — engenheiro-software — entrevista iniciada; aguardando o relatório dele e a branch docs/especificacao-mvp atualizada com dev-main.
+- I-02 — diretor-geral — ferramentas do Figma liberadas no engenheiro-software; falta validar a autenticação na sessão dele.
 
 ## Interrompidas
 <!-- formato: - <ID> — <agente> — <onde parou> — <motivo> — <como retomar> -->
@@ -20,8 +21,8 @@ A lista completa de tarefas fica em `docs/backlog.md`; aqui só entra o que impo
 
 ## Bloqueado / precisa de você
 <!-- formato: - <ID>: <o que precisa ser decidido/feito pelo usuário> -->
-- I-02: instalar o plugin Figma (/plugin install figma@claude-plugins-official, escopo project) e autenticar.
-- E-01: fazer a entrevista de especificação do MVP (sessão própria: `claude --agent engenheiro-software`).
+- A-10 / I-02: reabrir as sessões com --name (claude --agent diretor-geral --name diretor-geral; claude --agent engenheiro-software --name engenheiro-software) e autenticar o Figma (/mcp) se for pedido.
+- E-01: trazer ao diretor-geral o relatório preparado pelo engenheiro-software.
 - A-02: decidir se Objective C++ permanece na stack (será tratada na entrevista E-01).
 
 ## Sugestões de próximos passos

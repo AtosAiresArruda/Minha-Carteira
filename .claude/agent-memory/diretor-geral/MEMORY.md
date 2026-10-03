@@ -1,2 +1,3 @@
 - [Fluxo git automático](feedback_automacao.md) — usuário só participa do merge na main; hooks do --agent vazam p/ subagentes
 - [Secretário escreve tudo](feedback_secretario.md) — diretor não escreve arquivos; pedir ao secretario-geral; formato de status aprovado
+- [Sessões falam direto](feedback_sessoes.md) — agentes de sessão própria usam SendMessage/ListAgents com o diretor; edição de agentes é feita pelo usuário

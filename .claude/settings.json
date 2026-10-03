@@ -1,7 +1,4 @@
 {
-  "enabledPlugins": {
-    "impeccable@impeccable": true
-  },
   "hooks": {
     "PreToolUse": [
       {
@@ -14,5 +11,9 @@
         ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "impeccable@impeccable": true,
+    "figma@claude-plugins-official": true
   }
 }
