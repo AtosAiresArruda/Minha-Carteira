@@ -7,11 +7,12 @@ A lista completa de tarefas fica em `docs/backlog.md`; aqui só entra o que impo
 
 ## Concluído recentemente
 - A-01, A-05, A-06 e S-01 integrados na `dev-main` (merge 658f317) e publicados. A `main` continua no commit inicial (80dd33b).
-- A equipe de gestão está completa: diretor-geral, revisor-git, operador-git, secretario-geral e engenheiro-requisitos.
+- A equipe de gestão está completa: diretor-geral, revisor-git, operador-git, secretario-geral e engenheiro-software.
 
 ## Em andamento
 <!-- formato: - <ID> — <agente> — <situação> -->
-- E-01 — engenheiro-requisitos — branch `docs/especificacao-mvp` criada e publicada; a entrevista ainda não começou.
+- A-08 / A-09 — secretario-geral — agentes engenheiro-software e revisor-arquitetura escritos; aguardando commit via revisor-git.
+- E-01 — engenheiro-software — branch `docs/especificacao-mvp` criada e publicada; a entrevista ainda não começou.
 
 ## Interrompidas
 <!-- formato: - <ID> — <agente> — <onde parou> — <motivo> — <como retomar> -->
@@ -19,11 +20,12 @@ A lista completa de tarefas fica em `docs/backlog.md`; aqui só entra o que impo
 
 ## Bloqueado / precisa de você
 <!-- formato: - <ID>: <o que precisa ser decidido/feito pelo usuário> -->
-- E-01: fazer a entrevista de especificação do MVP (sessão própria: `claude --agent engenheiro-requisitos`).
+- I-02: instalar o plugin Figma (/plugin install figma@claude-plugins-official, escopo project) e autenticar.
+- E-01: fazer a entrevista de especificação do MVP (sessão própria: `claude --agent engenheiro-software`).
 - A-02: decidir se Objective C++ permanece na stack (será tratada na entrevista E-01).
 
 ## Sugestões de próximos passos
-1. Entrevista E-01 com o engenheiro-requisitos, para gerar `docs/especificacao/`.
+1. Entrevista E-01 com o engenheiro-software, para gerar `docs/especificacao/`.
 2. A-03: propor a equipe de desenvolvimento (Flutter, C++/OpenCV, UI, testes) com base na especificação.
 3. Dividir o MVP (gráficos de gastos) em tarefas, definindo primeiro os contratos (formato do retorno do cupom, interface FFI Flutter↔C++).
 4. A-07: revisar os hooks conforme o uso real.

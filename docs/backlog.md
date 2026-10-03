@@ -12,7 +12,8 @@ MVP: usuário acessa os gráficos referentes aos seus gastos (ver `CLAUDE.md`).
 | revisor-git | Revisa pedidos git e devolve plano de comandos | opus | ativo |
 | operador-git | Executa o plano aprovado pelo revisor | haiku | ativo |
 | secretario-geral | Escreve arquivos de gestão (.md, .sh, agentes, skills, memória) a pedido do diretor | sonnet | ativo |
-| engenheiro-requisitos | Entrevista o usuário e escreve a especificação em docs/especificacao/ (sessão própria) | opus | ativo |
+| engenheiro-software | Análise de requisitos, prototipação (fluxos, diagramas, contratos, Figma) e documentação do sistema em docs/especificacao/ (sessão própria) | opus | ativo |
+| revisor-arquitetura | Revisa diagramas/contratos/protótipo a cada alteração (somente leitura), chamado pelo engenheiro-software | opus | ativo |
 
 ## Tarefas
 
@@ -27,7 +28,10 @@ MVP: usuário acessa os gráficos referentes aos seus gastos (ver `CLAUDE.md`).
 | A-05 | Criar o agente secretario-geral e retirar Write/Edit do diretor-geral | concluído (71b4bcc, 45f69e3; em dev-main 658f317) | diretor-geral + secretario-geral | chore/agentes | — |
 | A-06 | Criar o agente engenheiro-requisitos (entrevista de especificação) | concluído (45f69e3; em dev-main 658f317) | secretario-geral | chore/agentes | — |
 | A-07 | Revisar os padrões de bloqueio dos hooks após o uso real (falsos positivos/negativos) — contínua | a fazer | diretor-geral + secretario-geral (mudanças só com aprovação do usuário) | chore/agentes | A-01 |
-| E-01 | Entrevista de especificação do MVP e documentação em docs/especificacao/ | a fazer (branch criada e publicada, igual a dev-main; aguardando a entrevista com o usuário) | engenheiro-requisitos (sessão própria) | docs/especificacao-mvp | A-06 |
+| E-01 | Entrevista de especificação do MVP e documentação em docs/especificacao/ | a fazer (branch criada e publicada, igual a dev-main; aguardando a entrevista com o usuário) | engenheiro-software (sessão própria) | docs/especificacao-mvp | A-06, A-08, A-09, I-02 |
+| A-08 | Renomear e ampliar o engenheiro-requisitos para engenheiro-software (prototipação + documentação do sistema) | em revisão | secretario-geral | chore/agentes | A-06 |
+| A-09 | Criar o agente revisor-arquitetura | em revisão | secretario-geral | chore/agentes | A-08 |
+| I-02 | Instalar e autenticar o Figma MCP (plugin figma@claude-plugins-official, escopo project) e liberar as ferramentas no engenheiro-software | a fazer | usuário + diretor-geral | chore/agentes | A-08 |
 | I-01 | Remover a cópia antiga do projeto no OneDrive | concluído (falta só apagar a pasta vazia, fora da sessão) | usuário | — | — |
 
 ### A-01 — Correções nos agentes de git

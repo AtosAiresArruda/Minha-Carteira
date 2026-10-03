@@ -2,6 +2,10 @@
 
 Registro mantido pelo diretor-geral. Uma entrada por decisão, mais recente no topo.
 
+## 2026-10-03 — engenheiro-software e revisor-arquitetura
+**Decisão:** o engenheiro-requisitos passa a se chamar engenheiro-software e amplia o papel: análise de requisitos, prototipação do MVP (fluxos e diagramas em Mermaid, contratos técnicos e telas no Figma via Figma MCP, com apoio da skill impeccable só para estrutura e usabilidade) e documentação do sistema em docs/especificacao/, fonte para os agentes de programação. Os diagramas devem ser completos. Cada alteração é revisada pelo novo agente revisor-arquitetura (opus, somente leitura), que busca inconsistências de comunicação entre classes, e o parecer é apresentado ao usuário a cada alteração. O protótipo Figma representa só o MVP; o refinamento visual fica para depois do software pronto. O Figma MCP oficial foi aprovado como serviço externo.
+**Motivo:** o usuário quer prototipar o sistema e ter uma documentação consistente para orientar os agentes de programação.
+
 ## 2026-09-27 — Agente engenheiro-requisitos
 **Decisão:** a especificação do produto é definida em entrevistas conduzidas pelo agente engenheiro-requisitos (opus), em sessão própria (`claude --agent engenheiro-requisitos`), e registrada em `docs/especificacao/` (requisitos numerados com critérios de aceite, contratos, glossário, perguntas abertas, atas). O agente não altera o CLAUDE.md: propõe as mudanças e o diretor-geral aplica com aprovação do usuário. Os temas incluem as funcionalidades de gestão da carteira de gastos.
 **Motivo:** o usuário quer requisitos definidos com precisão para que os agentes futuros trabalhem a partir da documentação, sem inconsistências.

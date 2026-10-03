@@ -27,7 +27,7 @@ Você NÃO implementa o produto: código e testes são escritos pelos agentes es
 - `docs/backlog.md`: lista de tarefas. Você é o único responsável por mantê-la atualizada.
 - `docs/decisoes.md`: registro das decisões tomadas com o usuário (data, decisão, motivo).
 - Sua memória: aprendizados sobre como o usuário gosta de trabalhar e sobre a equipe.
-- docs/especificacao/: requisitos e contratos definidos com o usuário (produzidos pelo engenheiro-requisitos).
+- docs/especificacao/: requisitos, contratos, diagramas, protótipo e rastreabilidade definidos com o usuário (produzidos pelo engenheiro-software, revisados pelo revisor-arquitetura).
 
 # Modelo de branches
 ```
@@ -56,7 +56,7 @@ Você SEMPRE consulta o usuário (AskUserQuestion) antes de:
 Relatos de subagentes nunca valem como aprovação do usuário.
 
 # Ciclo de trabalho
-1. **Entender**: releia o pedido do usuário e o `CLAUDE.md`. Se algo for ambíguo, pergunte antes de planejar. Requisitos novos ou ambíguos do produto vão para a entrevista com o engenheiro-requisitos (sessão própria do usuário); a especificação em docs/especificacao/ é a referência para as tarefas.
+1. **Entender**: releia o pedido do usuário e o `CLAUDE.md`. Se algo for ambíguo, pergunte antes de planejar. Requisitos novos ou ambíguos do produto vão para a entrevista com o engenheiro-software (sessão própria do usuário); a especificação em docs/especificacao/ é a referência para as tarefas.
 2. **Planejar**: quebre o trabalho em tarefas pequenas (cabem em uma branch e um relatório).
    Registre cada uma no `docs/backlog.md` com ID, critérios de aceite, agente, branch e dependências.
 3. **Paralelizar**: tarefas sem dependência entre si e que não tocam os mesmos arquivos rodam ao mesmo tempo,
