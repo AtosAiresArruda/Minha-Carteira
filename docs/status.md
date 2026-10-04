@@ -3,9 +3,11 @@
 Mantido pelo diretor-geral. Painel do momento: é atualizado ao fim de cada ciclo e lido pela skill `mostrar-status`.
 A lista completa de tarefas fica em `docs/backlog.md`; aqui só entra o que importa agora.
 
-Última atualização: 2026-10-03
+Última atualização: 2026-10-04
 
 ## Concluído recentemente
+- E-01: Temas 4–6 fechados (simulador da infraestrutura, dados só no aparelho e sem conta, filtro por estado e busca de gastos).
+- G-03: CLAUDE.md atualizado com o contrato do cupom, câmera/galeria e o estado `aguardando envio` (aprovado pelo usuário; commit pendente).
 - I-02: Figma MCP autenticado; o engenheiro-software já tem as ferramentas de leitura e escrita do Figma.
 - G-02: novo Objetivo Atual commitado (279de53) na branch docs/especificacao-mvp.
 - A-10: comunicação direta entre as sessões diretor-geral e engenheiro-software validada.
@@ -16,7 +18,7 @@ A lista completa de tarefas fica em `docs/backlog.md`; aqui só entra o que impo
 
 ## Em andamento
 <!-- formato: - <ID> — <agente> — <situação> -->
-- E-01 — engenheiro-software — Temas 1–3 fechados e gravados (RF-01–RF-14, RNF-01–03); 1º bloco de docs/especificacao/ enviado ao revisor-git para commit/push; próximo: Tema 4 (infraestrutura real ou simulada).
+- E-01 — engenheiro-software — Temas 1–6 fechados (RF-01–RF-23, RNF-01–04); Temas 4–6 aguardando commit; próximo: Tema 7 (categorias).
 
 ## Interrompidas
 <!-- formato: - <ID> — <agente> — <onde parou> — <motivo> — <como retomar> -->
@@ -25,13 +27,12 @@ A lista completa de tarefas fica em `docs/backlog.md`; aqui só entra o que impo
 ## Bloqueado / precisa de você
 <!-- formato: - <ID>: <o que precisa ser decidido/feito pelo usuário> -->
 - A-02: decidir se Objective C++ permanece na stack (será tratada na entrevista E-01).
-- E-01: perguntas abertas que dependem do usuário/Z (docs/especificacao/perguntas-abertas.md): PA-13 (infra real ou simulada; quem leva o contrato a Z), PA-12 (conta/login para aviso), PA-06 (categorias), PA-07 (onde fica a foto), PA-09 (filtros/edição de envios), PA-11 (desconto geral), PA-01/PA-08 (LGPD, Tema 11), PA-10 (stack C++).
-- E-01: 3 propostas de texto para o CLAUDE.md (ata do Tema 3) aguardam aprovação do usuário.
+- E-01: perguntas abertas (docs/especificacao/perguntas-abertas.md): PA-06/PA-16 (categorias e busca — Tema 7), PA-11 (desconto geral), PA-01/PA-08 (LGPD, Tema 11), PA-10 (stack C++), PA-14 (comparar com a API de Z quando chegar), tecnologia do simulador (PA nova).
 
 ## Sugestões de próximos passos
-1. Retomar a entrevista no Tema 4 (responder PA-13 e PA-12 primeiro).
+1. Retomar a entrevista no Tema 7 (categorias: PA-06 e PA-16).
 2. Protótipo clicável no Figma + diagramas e contratos, revisados pelo revisor-arquitetura.
-3. Integrar o 1º bloco de docs/especificacao/ na dev-main após o commit.
+3. Commitar G-03 e os Temas 4–6 e integrar o bloco de docs/especificacao/ na dev-main.
 4. A-07: revisar os hooks conforme o uso real.
 5. Depois da documentação: A-03 (equipe de desenvolvimento) e proposta de atualização da main.
 6. Opcional: corrigir o token do GitHub MCP (falha 'Authorization header is badly formatted'); o git normal não é afetado.
