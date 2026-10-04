@@ -15,6 +15,8 @@ Convenções aplicadas nos planos (validadas pelo diretor-geral em 2026-09-27):
 
 - Atualizar branch de tarefa sem commits próprios com a dev-main: `git merge --ff-only dev-main` (nunca rebase); confira antes `git log --oneline dev-main..<branch>` vazio.
 - Diretórios novos não rastreados: inspecione com `git status --porcelain --untracked-files=all` e liste cada arquivo no `git add` (subpastas vazias, ex. `.claude/` dentro de memória, não entram no git; só sinalize).
+- Cópia de trabalho compartilhada com sessão própria em curso (ex.: engenheiro-software gravando docs/especificacao/): commit só com lista explícita; no fim, em vez de exigir `git status --porcelain` vazio, mande conferir que sobraram só os arquivos do outro agente. Não inclua a memória do revisor no commit do outro agente; ela entra no commit de gestão do diretor (validado em 2026-10-03: um commit por agente, depois um único push).
+- Integrar branch de tarefa que continua em uso (ex.: docs/especificacao-mvp, entrevista em curso): commits → push da branch → `git status --porcelain` vazio (parar se não) → `git fetch origin` + `git log dev-main..origin/dev-main` vazio → switch dev-main → merge --no-ff → push dev-main → switch de volta. Definido em 2026-10-04.
 - Aprovação do usuário repassada pelo diretor-geral (com data e frase do usuário) vale; para commit em branch de tarefa basta o relatório completo.
 
 **Why:** working copy com alterações de várias tarefas misturadas é recorrente (diretor/secretário editam em dev-main antes de haver branch); `git add -p` não é possível no operador.

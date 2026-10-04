@@ -3,7 +3,7 @@
 Mantido pelo diretor-geral. Status: `a fazer` · `em andamento` · `em revisão` · `concluído` · `bloqueado`.
 
 ## Objetivo atual
-MVP: usuário acessa os gráficos referentes aos seus gastos (ver `CLAUDE.md`).
+Fase atual: protótipo clicável do MVP no Figma (dados de exemplo) para apresentação a Z + documentação completa em docs/especificacao/. Sem código do app nesta fase (ver `CLAUDE.md`).
 
 ## Equipe
 | Agente | Papel | Modelo | Situação |
@@ -23,17 +23,19 @@ MVP: usuário acessa os gráficos referentes aos seus gastos (ver `CLAUDE.md`).
 | A-04 | Criar `dev-main` a partir de `main`, publicar no GitHub e integrar `chore/agentes` nela | concluído (a3d47e3, publicado) | diretor-geral (via revisor/operador) | dev-main | A-00 |
 | A-01 | Corrigir os agentes de git (ver detalhes) | concluído (370e9dd, 45f69e3; em dev-main 658f317) | diretor-geral | chore/agentes | A-00 |
 | A-02 | Decidir se Objective C++ permanece na stack (suporte atual: só Android) | a fazer (será tratada na entrevista E-01) | diretor-geral + usuário | — | A-00 |
-| A-03 | Criar agentes de desenvolvimento (dev-flutter, dev-cpp-opencv, dev-ui, testador...) com bloqueio de git | a fazer | diretor-geral | chore/agentes | A-00, A-01, A-02, E-01 |
+| A-03 | Criar agentes de desenvolvimento (dev-flutter, dev-cpp-opencv, dev-ui, testador...) com bloqueio de git | adiada (só após o protótipo e a documentação; decisão de 2026-10-03) | diretor-geral | chore/agentes | A-00, A-01, A-02, E-01 |
 | S-01 | Criar a skill `mostrar-status` + painel `docs/status.md` | concluído (71b4bcc; em dev-main 658f317) | diretor-geral | chore/agentes | — |
 | A-05 | Criar o agente secretario-geral e retirar Write/Edit do diretor-geral | concluído (71b4bcc, 45f69e3; em dev-main 658f317) | diretor-geral + secretario-geral | chore/agentes | — |
 | A-06 | Criar o agente engenheiro-requisitos (entrevista de especificação) | concluído (45f69e3; em dev-main 658f317) | secretario-geral | chore/agentes | — |
 | A-07 | Revisar os padrões de bloqueio dos hooks após o uso real (falsos positivos/negativos) — contínua | a fazer | diretor-geral + secretario-geral (mudanças só com aprovação do usuário) | chore/agentes | A-01 |
-| E-01 | Entrevista de especificação do MVP e documentação em docs/especificacao/ | em andamento (entrevista iniciada em 2026-10-03; branch sendo atualizada com dev-main para o engenheiro escrever) | engenheiro-software (sessão própria) | docs/especificacao-mvp | A-06, A-08, A-09, I-02 |
+| E-01 | Entrevista de especificação do MVP e documentação em docs/especificacao/ | em andamento (Temas 1–6 fechados: D1–D54, RF-01–RF-23, RNF-01–RNF-04; Temas 1–3 commitados em ef20ff0; Temas 4–6 gravados em 2026-10-04, commit em revisão; próximo: Tema 7 — categorias; ainda sem diagramas, contratos e protótipo Figma) | engenheiro-software (sessão própria) | docs/especificacao-mvp | A-06, A-08, A-09, I-02 |
 | A-08 | Renomear e ampliar o engenheiro-requisitos para engenheiro-software (prototipação + documentação do sistema) | concluído (9df1f62) | secretario-geral | chore/agentes | A-06 |
 | A-09 | Criar o agente revisor-arquitetura | concluído (9df1f62) | secretario-geral | chore/agentes | A-08 |
-| I-02 | Instalar e autenticar o Figma MCP (plugin figma@claude-plugins-official, escopo project) e liberar as ferramentas no engenheiro-software | em andamento (ferramentas liberadas; falta validar a autenticação na sessão do engenheiro) | usuário + diretor-geral | chore/agentes | A-08 |
-| A-10 | Comunicação direta entre sessões: diretor-geral ganha ListAgents; engenheiro-software ganha SendMessage e ListAgents e passa a enviar relatórios e pedidos git direto à sessão diretor-geral; sessões abertas com --name fixo; regra para agentes futuros de sessão própria | em andamento (edições aplicadas; falta reabrir as sessões e validar a troca de mensagens) | usuário + diretor-geral | chore/agentes | A-08 |
+| I-02 | Instalar e autenticar o Figma MCP (plugin figma@claude-plugins-official, escopo project) e liberar as ferramentas no engenheiro-software | concluído (Figma MCP autenticado na sessão do engenheiro-software em 2026-10-03) | usuário + diretor-geral | chore/agentes | A-08 |
+| A-10 | Comunicação direta entre sessões: diretor-geral ganha ListAgents; engenheiro-software ganha SendMessage e ListAgents e passa a enviar relatórios e pedidos git direto à sessão diretor-geral; sessões abertas com --name fixo; regra para agentes futuros de sessão própria | concluído (troca de mensagens entre as sessões validada em 2026-10-03) | usuário + diretor-geral | chore/agentes | A-08 |
 | I-01 | Remover a cópia antiga do projeto no OneDrive | concluído (falta só apagar a pasta vazia, fora da sessão) | usuário | — | — |
+| G-02 | Aplicar o novo Objetivo Atual no CLAUDE.md e registrar a decisão (fase protótipo + documentação) | concluído (279de53, na branch docs/especificacao-mvp; entra na dev-main junto com E-01) | diretor-geral + secretario-geral | docs/especificacao-mvp | E-01 |
+| G-03 | Aplicar no CLAUDE.md as 3 propostas dos Temas 2–3 (contrato do cupom, câmera/galeria, aguardando envio) e registrar a decisão | em revisão | diretor-geral + secretario-geral | docs/especificacao-mvp | E-01 |
 
 ### A-01 — Correções nos agentes de git
 - [x] Proteção da `main`: substituída a regra `ask` por hook global `protege-main.sh`, que pede confirmação ao usuário em qualquer forma de merge/push na `main`.

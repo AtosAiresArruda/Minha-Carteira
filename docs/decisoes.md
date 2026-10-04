@@ -2,6 +2,28 @@
 
 Registro mantido pelo diretor-geral. Uma entrada por decisão, mais recente no topo.
 
+## 2026-10-04 — Simulador, contrato provisório e dados só no aparelho (E-01, Temas 4–6)
+**Decisão:**
+- No MVP, o app conversa com um simulador separado da infraestrutura, com atraso ajustável e todos os resultados e motivos de reprovação. O simulador não manda aviso silencioso: o app só consulta o estado ao abrir (D35, D39, D40).
+- Z já tem API própria, mas a documentação dela só chega depois da apresentação. O contrato em docs/especificacao/contratos/ fica provisório, e o app vai adotar o formato de Z. O usuário leva a proposta (protótipo + contrato provisório) a Z na apresentação (D36–D38).
+- Os dados ficam só no aparelho, num banco local, sem servidor nosso, sem sincronização e sem conta/login. O app guarda uma cópia própria da foto (D41–D45).
+- Os cupons aceitos não são editáveis. A lista ganha filtro por estado e uma tela nova de busca de gastos (texto + período, com a opção de valor cheio). Orçamento e exportação ficam fora do MVP (D47–D54).
+Nenhuma mudança no CLAUDE.md.
+**Motivo:** o usuário confirmou os Temas 4–6 da entrevista com o engenheiro-software em 2026-10-04.
+
+## 2026-10-03 — Contrato do cupom e envio no CLAUDE.md (E-01, Temas 2–3)
+**Decisão:** o CLAUDE.md passa a descrever:
+- a foto, que pode vir da câmera ou da galeria (RF-02);
+- o retorno da infraestrutura em caso de aceito: cabeçalho com data_compra, nome_local e tipo_compra; itens com nome_item, tipo_item, adicional, preco_item (unitário) e quantidade_item; linhas de desconto ligadas aos itens;
+- o motivo da reprovação, que vem de uma lista fixa;
+- o novo estado `aguardando envio`, que é reenviado automaticamente quando a conexão voltar.
+Origem: D23, D25–D27, D31, D32.
+**Motivo:** o usuário aprovou as 3 propostas do engenheiro-software, tiradas da ata do Tema 3.
+
+## 2026-10-03 — Fase atual: protótipo no Figma + documentação (E-01, Tema 1)
+**Decisão:** o objetivo atual passa a ser prototipar o MVP (protótipo clicável no Figma, estrutura limpa, com dados de exemplo) para apresentação a Z e produzir a documentação completa em docs/especificacao/ que orientará os agentes de programação. Nesta fase não se escreve código do app. A criação dos agentes de desenvolvimento (A-03) fica adiada para depois do protótipo e da documentação.
+**Motivo:** o usuário confirmou o Tema 1 da entrevista com o engenheiro-software e aprovou a mudança no CLAUDE.md com o diretor-geral.
+
 ## 2026-10-03 — Agentes de sessão própria falam direto com o diretor-geral (A-10)
 **Decisão:** agentes que rodam em sessão própria (hoje, o engenheiro-software) recebem as ferramentas SendMessage e ListAgents e enviam relatórios, pedidos de operações git e dúvidas de coordenação direto à sessão do diretor-geral, sem o usuário repassar. O diretor-geral ganha ListAgents e responde pela mesma via. As sessões são abertas com nome fixo: `claude --agent diretor-geral --name diretor-geral` e `claude --agent engenheiro-software --name engenheiro-software`. Todo agente futuro que rode em sessão própria recebe as mesmas duas ferramentas. Os subagentes não mudam, porque já respondem dentro da sessão do diretor. O recebimento de mensagens segue o padrão do Claude Code (`crossSessionInbound` não configurado).
 **Motivo:** o usuário quer que os agentes trabalhem com fluidez sem precisar repassar mensagens entre sessões.

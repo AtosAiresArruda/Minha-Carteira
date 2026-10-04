@@ -1,11 +1,11 @@
 ---
 name: tema1-respostas
-description: Respostas do Tema 1 (visão do produto) da entrevista de 2026-10-03, ainda não gravadas em docs/especificacao/ e pendentes de confirmação
+description: Respostas do Tema 1 (visão do produto) da entrevista de 2026-10-03; confirmadas e gravadas na ata entrevistas/2026-10-03.md
 metadata:
   type: project
 ---
 
-Entrevista 2026-10-03, Tema 1 — Visão do produto e usuários. Resumo apresentado; usuário ainda NÃO confirmou.
+Entrevista 2026-10-03, Tema 1 — Visão do produto e usuários. CONFIRMADO pelo usuário em 2026-10-03 (2ª sessão) e GRAVADO em docs/especificacao/ (ata, README, perguntas-abertas).
 
 Decisões:
 - D1 Usuário = pessoa física, controla os próprios gastos.

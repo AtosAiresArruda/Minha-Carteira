@@ -45,7 +45,7 @@ Todo merge ou push na `main` também pede confirmação do usuário pelo sistema
 
 
 ## Objetivo Atual
-Construir o MVP do aplicativo. O MVP é definido pelas seguintes funcionalidades:
+Prototipar o MVP do aplicativo (protótipo clicável no Figma, estrutura limpa, com dados de exemplo) para apresentação a Z, e produzir a documentação completa em docs/especificacao/ que orientará os agentes de programação. O MVP é definido pelas seguintes funcionalidades:
 - Usuário pode acessar os gráficos referentes aos seus gastos
 
 ## Cenário
@@ -55,5 +55,5 @@ Construir o MVP do aplicativo. O MVP é definido pelas seguintes funcionalidades
 
 ## Software que estamos construindo
 Vamos construir um software para servir de controle de carteira aos usuários. Os usuários poderam fazer gestão de seus gastos através desse aplicativo. Nosso objetivo é facilitar a insersão dos dados referentes aos gastos do usuário. 
-- **INSERSÃO DE DADOS**O principal meio de insersão de dados do usuário deve ser através de fotografias. O usuário poderá enviar uma foto através de sua câmera de seus cupons fiscais referente as compras que fizera para a nossa infraestrutura. A infraestrutura processará os cupons e retornara uma o estado do pedido (aceito ou reprovado) e em caso de aceito uma tabela, onde os campus dessa tabela são: data_compra, tipo_compra, nome_item, preco_item, quantidade_item. Esse processamento pode demorar, então ao enviar um cupom fiscal, o estado desse envio é definido `em análise`. O usuário pode enviar fotos de má qualidade ou de outras coisas que não sejam cupons, nesse caso, o estado do pedido será definido para `reprovado`. Caso o processamento do cupom ocorra com sucesso, a infraestrutura devolverá `aceito` e a tabela contendo a descrição do cupom fiscal.
+- **INSERSÃO DE DADOS**O principal meio de insersão de dados do usuário deve ser através de fotografias. O usuário poderá enviar uma foto, pela câmera ou pela galeria do aparelho, de seus cupons fiscais referente as compras que fizera para a nossa infraestrutura. A infraestrutura processará os cupons e retornará o estado do pedido (aceito ou reprovado). Em caso de aceito, retornará os dados do cupom: um cabeçalho com data_compra, nome_local e tipo_compra (tipo do local, ex.: mercado, restaurante) e a lista de itens com nome_item, tipo_item, adicional, preco_item (preço unitário) e quantidade_item, além de linhas de desconto ligadas aos itens. Em caso de reprovado, retornará o motivo, de uma lista fixa. Esse processamento pode demorar, então ao enviar um cupom fiscal, o estado desse envio é definido `em análise`. Se a foto não puder ser enviada (sem internet ou erro), o envio fica `aguardando envio` e é enviado automaticamente quando houver conexão. O usuário pode enviar fotos de má qualidade ou de outras coisas que não sejam cupons, nesse caso, o estado do pedido será definido para `reprovado`. Caso o processamento do cupom ocorra com sucesso, a infraestrutura devolverá `aceito` e a tabela contendo a descrição do cupom fiscal.
 
