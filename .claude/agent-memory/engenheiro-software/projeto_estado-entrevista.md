@@ -46,6 +46,23 @@ Atualização 3ª sessão (2026-10-03):
 - Diretor pediu relatório para commit+push dos Temas 1–3 (docs/especificacao/** + minha memória), sem parecer
   do revisor (não há diagramas). Relatório e as 3 propostas do CLAUDE.md enviados ao diretor por SendMessage.
 
+Atualização 4ª sessão (2026-10-04):
+- Temas 1–3 já commitados (ef20ff0, a72e6e9) na docs/especificacao-mvp. G-03 (3 propostas no CLAUDE.md) aplicada
+  pelo diretor/secretario, ainda não commitada (arquivos de gestão, não são meus).
+- Tema 4 FECHADO e GRAVADO (ata entrevistas/2026-10-04.md; D35–D40; RF-13 alterado, RF-15/16/17(depois), RNF-04;
+  PA-13 respondida, PA-12 → depois, PA-14 nova). Simulador separado; Z já tem API mas docs só após apresentação;
+  app adota formato de Z → contrato PROVISÓRIO; aviso silencioso fora do MVP.
+- Tema 5 FECHADO e GRAVADO (D41–D46; RF-18/19/20; PA-07 respondida; PA-15 nova): tudo no aparelho, sem conta,
+  foto copiada inteira, perda do histórico aceitável.
+- Tema 6 FECHADO e GRAVADO (D47–D54; RF-21/22/23; PA-09 respondida; PA-16 nova): sem edição, filtro por estado,
+  BUSCA de gastos (texto em item/local/tipos, só aceitos, atalhos+intervalo de meses, total pago + itens, opção
+  valor cheio/desconto). Sem orçamento/exportação/lançamento manual.
+- Próximo: Tema 7 (categorias e gráficos; PA-06, PA-11, PA-16). Próximo ID livre: D55, RF-24, RNF-05, PA-18.
+- Diretor aprovou Temas 4–6 com 2 ajustes (PA-12 reescrita; PA-17 = tecnologia/local/autor do simulador, Tema 9,
+  dependência nova → decisão usuário+diretor). Feitos; pedido de commit enviado ao diretor em 2026-10-04.
+  Arquivos de gestão (CLAUDE.md, backlog, decisoes, status) vão num pedido separado do diretor.
+- Ainda nada a commitar com parecer; Tema 4 não commitado (enviar no próximo relatório ao diretor).
+
 **Why:** a entrevista atravessa várias sessões e as respostas da 1ª sessão só existiam na conversa.
 **How to apply:** no início da sessão: `git branch --show-current` deve ser docs/especificacao-mvp e conter a0112ca;
 só então criar docs/especificacao/ (README, ata entrevistas/2026-10-03.md, perguntas-abertas, glossário) a partir de

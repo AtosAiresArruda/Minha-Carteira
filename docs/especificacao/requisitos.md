@@ -73,14 +73,61 @@ Origem = data da entrevista e decisão da ata em `entrevistas/`. Prioridade: MVP
 - **Critério de aceite:** com o aparelho sem internet, confirmar um envio cria um item `aguardando envio` na lista; ao restabelecer a conexão, sem ação do usuário, o envio sobe e passa a `em análise`.
 
 ### RF-13 — Atualização do estado dos envios
-- **Descrição:** a infraestrutura avisa o app quando um envio muda de estado, por um aviso silencioso (sem notificação visível). Como reserva, o app consulta a infraestrutura sobre os envios `em análise` ao ser aberto e ao abrir a lista.
-- **Origem:** 2026-10-03 (D15, D28) · **Prioridade:** MVP
-- **Critério de aceite:** com o app aberto, um aviso da infraestrutura atualiza o estado na lista sem ação do usuário; com o aviso perdido (app fechado), ao abrir o app a lista mostra o estado atual vindo da consulta. Identificação do aparelho/usuário para o aviso: PA-12 (Tema 5).
+- **Descrição:** o app consulta a infraestrutura sobre os envios `em análise` ao ser aberto e ao abrir a lista, e atualiza o estado mostrado.
+- **Origem:** 2026-10-03 (D15, D28); 2026-10-04 (D40) · **Prioridade:** MVP
+- **Critério de aceite:** com um envio `em análise` que a infraestrutura (ou o simulador) já respondeu, ao abrir o app ou a lista o estado mostrado passa a ser o atual (`aceito` ou `reprovado`), sem outra ação do usuário.
+- **Histórico:** 2026-10-04 — aviso silencioso retirado do MVP (D40) e movido para o RF-17; fica só a consulta.
 
 ### RF-14 — Descontos, valor pago e valor cheio
 - **Descrição:** descontos chegam como linhas separadas, cada uma ligada ao item a que se refere. Para cada item, o app guarda o valor cheio (`preco_item` × `quantidade_item`) e o valor pago (valor cheio − descontos daquele item). Os dois valores são guardados também para o painel de gastos.
 - **Origem:** 2026-10-03 (D32, D33) · **Prioridade:** MVP
 - **Critério de aceite:** com um cupom de exemplo com desconto de 5,00 em 3 shampoos de 10,00, o item guarda valor cheio 30,00 e valor pago 25,00; os dois valores ficam disponíveis para o detalhe do cupom e para o painel. Desconto geral do cupom (sem item): PA-11.
+
+### RF-15 — Simulador da infraestrutura com atraso ajustável
+- **Descrição:** no MVP o app conversa com um simulador separado da infraestrutura, que segue o contrato provisório e responde a cada envio depois de um atraso ajustável (segundos ou minutos).
+- **Origem:** 2026-10-04 (D35, D39) · **Prioridade:** MVP
+- **Critério de aceite:** com o atraso configurado em 30 s, um envio feito pelo app fica `em análise` e, consultado após 30 s, o simulador devolve o resultado; com o atraso em 2 min, o resultado só aparece após 2 min.
+
+### RF-16 — Simulador com todos os resultados e motivos
+- **Descrição:** o simulador devolve `aceito` com dados de cupom de exemplo ou `reprovado` com qualquer motivo da lista fixa (foto ilegível, não é cupom fiscal, cupom incompleto, cupom já enviado). O resultado pode ser forçado para teste. O simulador não envia aviso silencioso nem simula falhas de rede (a fila sem internet, RF-12, é testada desligando a rede do aparelho).
+- **Origem:** 2026-10-04 (D39) · **Prioridade:** MVP
+- **Critério de aceite:** forçando cada um dos 5 resultados (aceito + 4 motivos), o app mostra, depois da consulta, o estado e os dados ou o motivo correspondentes.
+
+### RF-17 — Aviso silencioso da infraestrutura
+- **Descrição:** a infraestrutura avisa o app quando um envio muda de estado, por um aviso silencioso (sem notificação visível), sem esperar a consulta do RF-13.
+- **Origem:** 2026-10-03 (D28); 2026-10-04 (D40) · **Prioridade:** depois
+- **Critério de aceite:** com o app aberto, um aviso da infraestrutura atualiza o estado na lista sem ação do usuário. Depende de identificar o aparelho/usuário (PA-12) e da API de Z (PA-14).
+- **Histórico:** 2026-10-04 — criado com a parte do aviso que saiu do RF-13.
+
+### RF-18 — Dados guardados no aparelho
+- **Descrição:** envios, estados e dados dos cupons (cabeçalho, itens, descontos, valor pago e valor cheio) ficam num banco local no aparelho. Não há servidor nosso nem sincronização no MVP; perder ou trocar o celular perde o histórico.
+- **Origem:** 2026-10-04 (D41, D45) · **Prioridade:** MVP
+- **Critério de aceite:** com o modo avião ligado, a lista e o detalhe dos envios já recebidos abrem normalmente com todos os dados.
+
+### RF-19 — Cópia própria da foto
+- **Descrição:** ao confirmar um envio (câmera ou galeria), o app guarda a própria cópia da foto, em tamanho inteiro, usada na miniatura e na ampliação do detalhe.
+- **Origem:** 2026-10-04 (D43, D44) · **Prioridade:** MVP
+- **Critério de aceite:** depois de apagar a foto original da galeria, o detalhe do envio continua mostrando a miniatura e a ampliação.
+
+### RF-20 — Sem conta nem login
+- **Descrição:** o app abre direto, sem cadastro nem login. Cada envio é identificado pelo código devolvido pela infraestrutura (simulador) ao receber a foto.
+- **Origem:** 2026-10-04 (D42) · **Prioridade:** MVP
+- **Critério de aceite:** na primeira abertura, o usuário chega à tela inicial sem nenhuma tela de conta; a consulta do RF-13 usa o código do envio.
+
+### RF-21 — Filtro por estado na lista de envios
+- **Descrição:** a lista de envios tem um filtro por estado (todos, aguardando envio, em análise, aceito, reprovado) e mostra do mais recente para o mais antigo. Cupons aceitos não são editáveis (D47).
+- **Origem:** 2026-10-04 (D47, D48) · **Prioridade:** MVP
+- **Critério de aceite:** com envios de exemplo nos 4 estados, escolher "reprovado" mostra só os reprovados, do mais recente para o mais antigo; "todos" mostra os 4 estados.
+
+### RF-22 — Busca de gastos por texto e período
+- **Descrição:** um campo de texto procura em nome do item, nome do local, tipo do item e tipo do local, só em cupons aceitos. Se o texto bate com um local ou tipo do local, entram todos os itens daqueles cupons. O período é escolhido por atalhos (este mês, mês passado, últimos 3 meses) ou por intervalo mês inicial–mês final, pela data da compra; sem período = tudo. O resultado mostra o total pago no topo e a lista dos itens somados (nome, data, local, valor pago); tocar num item abre o detalhe do cupom.
+- **Origem:** 2026-10-04 (D50, D51, D52) · **Prioridade:** MVP
+- **Critério de aceite:** com cupons de exemplo, buscar "shampoo" em "últimos 3 meses" lista só os itens de shampoo de cupons aceitos com data da compra nesses meses e o total é a soma dos valores pagos; buscar "mercado" soma todos os itens dos cupons de mercado; envios não aceitos nunca entram.
+
+### RF-23 — Valor cheio e desconto na busca
+- **Descrição:** no resultado da busca, a opção "mostrar valor cheio", quando ligada, mostra no topo o total pago, o total cheio e o total de desconto (cheio − pago), e em cada item também o valor cheio e o desconto.
+- **Origem:** 2026-10-04 (D53) · **Prioridade:** MVP
+- **Critério de aceite:** com o exemplo dos 3 shampoos (cheio 30,00, pago 25,00), com a opção ligada o topo mostra pago 25,00, cheio 30,00 e desconto 5,00, e a linha do item mostra os mesmos valores; com a opção desligada, só o valor pago aparece.
 
 ## Requisitos não funcionais
 
@@ -98,3 +145,8 @@ Origem = data da entrevista e decisão da ata em `entrevistas/`. Prioridade: MVP
 - **Descrição:** a infraestrutura (de Z) responde um envio em 1 a 3 dias. O app não impõe prazo nem trata envios parados.
 - **Origem:** 2026-10-03 (D29, D30, D34) · **Prioridade:** MVP
 - **Critério de aceite:** o protótipo e os dados de exemplo mostram envios `em análise` há até 3 dias como situação normal; o app não exibe erro nem muda o estado por demora.
+
+### RNF-04 — Endereço da infraestrutura configurável
+- **Descrição:** o endereço da infraestrutura é uma configuração do app, não fica fixo no código, para trocar o simulador pelo servidor de Z. O contrato da infraestrutura é provisório até a API de Z ser conhecida (D37, PA-14).
+- **Origem:** 2026-10-04 (D35, D37) · **Prioridade:** MVP
+- **Critério de aceite:** trocar o endereço na configuração faz o app falar com outro servidor sem alterar o código-fonte; o contrato da infraestrutura em `contratos/` traz no topo o aviso de provisório.

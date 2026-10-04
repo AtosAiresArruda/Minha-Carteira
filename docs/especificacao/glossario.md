@@ -19,7 +19,7 @@
 | Desconto | Linha separada da resposta, ligada a um item, que reduz o valor pago daquele item. | 2026-10-03 (D32) |
 | Valor cheio | `preco_item` × `quantidade_item` de um item, sem descontos. | 2026-10-03 (D33) |
 | Valor pago | Valor cheio do item menos os descontos ligados a ele; o total do cupom exibido é a soma dos valores pagos. | 2026-10-03 (D33) |
-| Aviso silencioso | Mensagem da infraestrutura ao app que atualiza o estado de um envio sem mostrar notificação. | 2026-10-03 (D28) |
+| Aviso silencioso | Mensagem da infraestrutura ao app que atualiza o estado de um envio sem mostrar notificação. Fora do MVP (RF-17). | 2026-10-03 (D28); 2026-10-04 (D40) |
 | Código de motivo | Valor da lista fixa de motivos de reprovação: foto ilegível, não é cupom fiscal, cupom incompleto, cupom já enviado. | 2026-10-03 (D27) |
 | `preco_item` | Preço de uma unidade do item (3 shampoos por R$ 30,00 → `preco_item` = 10,00, `quantidade_item` = 3). | 2026-10-03 (D23) |
 | Envio | Uma foto de cupom enviada à infraestrutura, com o seu estado. Um envio = uma foto = um cupom. | 2026-10-03 (D11) |
@@ -30,3 +30,9 @@
 | Tipo do item | Categoria de cada item do cupom (ex.: comida, bebida, limpeza). | 2026-10-03 (D20) |
 | Adicional | Marcação de um item que acompanha o principal (ex.: batata e refrigerante num pedido de hambúrguer). | 2026-10-03 (D20) |
 | Motivo da reprovação | Explicação mostrada no detalhe de um envio `reprovado` (ex.: foto ilegível, não é cupom). | 2026-10-03 (D19) |
+| Simulador da infraestrutura | Servidor separado, nosso, que imita a infraestrutura de Z no MVP: recebe a foto, espera um atraso ajustável e devolve aceito com dados de exemplo ou reprovado com um motivo. | 2026-10-04 (D35, D39) |
+| Contrato provisório | Formato de troca com a infraestrutura proposto por nós; será substituído pelo formato da API de Z. | 2026-10-04 (D37) |
+| Banco local | Banco de dados no próprio celular com envios, estados e dados dos cupons; no MVP é o único lugar onde esses dados ficam. | 2026-10-04 (D41) |
+| Código do envio | Identificador que a infraestrutura (simulador) devolve ao receber a foto; o app usa para consultar o estado. | 2026-10-04 (D42) |
+| Busca de gastos | Consulta por texto (item, local ou tipos) e período que soma o valor pago dos itens de cupons aceitos e lista esses itens. | 2026-10-04 (D50–D52) |
+| Desconto total | Diferença entre o valor cheio total e o valor pago total de um conjunto de itens. | 2026-10-04 (D53) |
